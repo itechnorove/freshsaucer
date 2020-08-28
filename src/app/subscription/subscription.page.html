@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+  <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="text">Buy Membership
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card-header>
+  <ion-card-title>{{ text.profile_heading }}</ion-card-title>
+  <ion-list lines="none">
+    <ion-list-header>
+    <ion-label>{{ text.profile_welcome }} <b>An Exclusive Membership!!</b></ion-label>
+    </ion-list-header>
+    </ion-list>
+  </ion-card-header>
+<ion-content *ngFor="let subscription of data" >
+<p style="text-align: center;padding: 10px 10px;font-size: 20px;color:#FA8223;line-height: 2">Premium Membership
+</p>
+<ion-card mode="ios" class="welcome-card" style="background-color:#FA8223;">
+  <ion-card-header>
+  <ion-card-title >Membership Plan</ion-card-title>
+  </ion-card-header>
+  <ion-list lines="none">
+  <ion-item>
+  <ion-label>Try something new!</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Get free delivery with our exclusive Membership Plan</ion-label>
+    </ion-item>
+  <ion-item>
+  <ion-icon slot="start" color="medium" text="Rs"></ion-icon>
+  <ion-label>{{subscription.value}}</ion-label>
+  </ion-item>
+  <ion-item routerLink="/payment" routerDirection="forward">
+  <button ion-button style="background-color:#FA8223; font-size: large;padding: 10px 10px;">Click to Pay</button>
+  </ion-item>
+  </ion-list>
+  
+  </ion-card>
+</ion-content>
+
